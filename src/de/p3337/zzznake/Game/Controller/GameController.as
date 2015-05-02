@@ -34,9 +34,8 @@ package de.p3337.zzznake.Game.Controller
 	 */
 	public class GameController extends EventDispatcher {
 		
-		private const FPS:uint = 10;
-		private const SPEED_START_VALUE:uint = 460;
-		private const SPEED_STEP_VALUE:uint = 20;
+		private const SPEED_START_VALUE:uint = 480;
+		private const SPEED_STEP_VALUE:uint = 30;
 		private const SPEED_MINIMUM_VALUE:uint = 30;
 		
 		private var model:GameModel;
