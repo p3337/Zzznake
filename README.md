@@ -14,14 +14,16 @@ On desktop devices the snake can be controlled by the arrow keys. On mobile devi
   * Flex SDK 4.6.0+
   * AIR-SDK 3.2+
 
-
-
 ## Demo
 
 A demonstration can be found under https://zzznake.p3337.de.
 
+## Mobile App
+
+An Android App can be found on [Google Play](https://play.google.com/store/apps/details?id=air.de.p3337.zzznake&hl=de "Zzznake on Google Play").
 
 
-## License
 
-These templates are licensed under the MIT License, see the `LICENSE` file for more information.
+# License
+
+These templates are licensed under the MIT License, see the [LICENSE](LICENSE) file for more information.
