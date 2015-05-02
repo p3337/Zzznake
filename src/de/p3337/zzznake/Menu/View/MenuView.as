@@ -4,8 +4,9 @@
  */
 package de.p3337.zzznake.Menu.View
 {
-	import flash.display.Bitmap;
 	import flash.display.Sprite;
+	
+	import mx.core.SpriteAsset;
 	
 	import de.p3337.zzznake.Main.Zzznake;
 	import de.p3337.zzznake.Util.DefaultButton;
@@ -31,10 +32,11 @@ package de.p3337.zzznake.Menu.View
 		}
 		
 		private function draw():void {
-			[Embed(source='/de/p3337/zzznake/Library/Logo/Zzznake.png')]
+			[Embed(source='/de/p3337/zzznake/Library/Logo/Zzznake_Logo.svg')]
 			var SnakeLogoClass:Class;
-			var snakeLogo:Bitmap = new SnakeLogoClass();
-				snakeLogo.y = Zzznake.ZZZNAKE_HEIGHT / 2 - snakeLogo.height / 1.5;
+			var snakeLogo:SpriteAsset = new SnakeLogoClass();
+				snakeLogo.x = 10;
+				snakeLogo.y = 150;
 			_view.addChild(snakeLogo);
 			
 			_openHighscoreBtn = new DefaultButton("Open Highscore");

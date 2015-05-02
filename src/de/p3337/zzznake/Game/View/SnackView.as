@@ -5,9 +5,9 @@
  */
 package de.p3337.zzznake.Game.View
 {
-	import flash.display.Bitmap;
-	
 	import flash.display.Sprite;
+	
+	import mx.core.SpriteAsset;
 	
 	import de.p3337.zzznake.Game.Model.GameModel;
 
@@ -38,13 +38,13 @@ package de.p3337.zzznake.Game.View
 			var posX:uint = model.snackElement.getPosition().x * GameModel.SQUARE_SIZE;
 			var posY:uint = model.snackElement.getPosition().y * GameModel.SQUARE_SIZE;
 			
-			var pizzaSliceBitmap:Bitmap = model.snackElement.getImage();
-			pizzaSliceBitmap.x = posX;
-			pizzaSliceBitmap.y = posY;
-			pizzaSliceBitmap.width = GameModel.SQUARE_SIZE;
-			pizzaSliceBitmap.height = GameModel.SQUARE_SIZE;
+			var pizzaSliceSpriteAsset:SpriteAsset = model.snackElement.getSpriteAsset();
+			pizzaSliceSpriteAsset.x = posX;
+			pizzaSliceSpriteAsset.y = posY;
+			pizzaSliceSpriteAsset.width = GameModel.SQUARE_SIZE;
+			pizzaSliceSpriteAsset.height = GameModel.SQUARE_SIZE;
 			
-			_view.addChild(pizzaSliceBitmap);
+			_view.addChild(pizzaSliceSpriteAsset);
 		}
 		
 		public function get view():Sprite {

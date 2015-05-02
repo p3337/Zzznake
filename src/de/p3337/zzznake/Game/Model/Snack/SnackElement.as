@@ -4,8 +4,8 @@
  * @copyright p3337.de All rights reserved.
  */
 package de.p3337.zzznake.Game.Model.Snack
-{
-	import flash.display.Bitmap;
+{	
+	import mx.core.SpriteAsset;
 	
 	import de.p3337.zzznake.Game.Model.GameObject;
 	import de.p3337.zzznake.Game.Model.Field.Field;
@@ -27,7 +27,7 @@ package de.p3337.zzznake.Game.Model.Snack
 			super(position);
 		}
 		
-		public function getImage():Bitmap {
+		public function getSpriteAsset():SpriteAsset {
 			return null;
 		}
 	}

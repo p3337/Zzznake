@@ -5,9 +5,8 @@
  */
 package de.p3337.zzznake.Game.View
 {
-	import flash.display.Bitmap;
-	
 	import flash.display.Sprite;
+	import mx.core.SpriteAsset;
 	
 	import de.p3337.zzznake.Enum.Direction;
 	import de.p3337.zzznake.Game.Model.GameModel;
@@ -56,7 +55,6 @@ package de.p3337.zzznake.Game.View
 			var width:uint = GameModel.SQUARE_SIZE - 2;
 			var height:uint = GameModel.SQUARE_SIZE - 2;
 			var rotation:int = 0;
-			var scaleX:int = 1;
 			
 			switch(model.head.direction) {
 				case Direction.UP:
@@ -70,8 +68,8 @@ package de.p3337.zzznake.Game.View
 					break;
 				case Direction.LEFT:
 					posX = (posX + 1) * GameModel.SQUARE_SIZE;
-					posY = posY * GameModel.SQUARE_SIZE + 2;
-					scaleX = -1;
+					posY = posY * GameModel.SQUARE_SIZE + GameModel.SQUARE_SIZE - 2;
+					rotation = 180;
 					break;
 				case Direction.DOWN:
 					posX = (posX + 1) * GameModel.SQUARE_SIZE - 1;
@@ -80,15 +78,14 @@ package de.p3337.zzznake.Game.View
 					break;
 			}
 			
-			var snakeHeadBitmap:Bitmap = model.head.getImage();
-				snakeHeadBitmap.x = posX;
-				snakeHeadBitmap.y = posY;
-				snakeHeadBitmap.rotation = rotation;
-				snakeHeadBitmap.width = width;
-				snakeHeadBitmap.height = height;
-				snakeHeadBitmap.scaleX = scaleX;
+			var snakeHeadSpriteAsset:SpriteAsset = model.head.getSpriteAsset();
+				snakeHeadSpriteAsset.x = posX;
+				snakeHeadSpriteAsset.y = posY;
+				snakeHeadSpriteAsset.rotation = rotation;
+				snakeHeadSpriteAsset.width = height;
+				snakeHeadSpriteAsset.height = width;
 				
-			_view.addChild(snakeHeadBitmap);
+			_view.addChild(snakeHeadSpriteAsset);
 		}
 		
 		private function drawSnakeTail():void {

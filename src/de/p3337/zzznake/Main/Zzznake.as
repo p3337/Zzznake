@@ -75,9 +75,13 @@ package de.p3337.zzznake.Main
 			
 			NativeApplication.nativeApplication.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown, false, 0, true);
 			
-			stage.scaleMode = StageScaleMode.NO_SCALE;
-			stage.align = StageAlign.TOP_LEFT;
+			stage.scaleMode = StageScaleMode.SHOW_ALL;
+			stage.align = StageAlign.TOP;
 			stage.addEventListener(Event.DEACTIVATE, deactivate);
+			
+			if(stage.stageWidth > ZZZNAKE_WIDTH) {
+				x = (stage.stageWidth - ZZZNAKE_WIDTH) / 2;
+			}
 			
 			backCommand = new ExitGameCommand();
 				

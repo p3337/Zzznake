@@ -5,7 +5,7 @@
  */
 package de.p3337.zzznake.Game.Model.Snake
 {
-	import flash.display.Bitmap;
+	import mx.core.SpriteAsset;
 	
 	import de.p3337.zzznake.Enum.Direction;
 	import de.p3337.zzznake.Enum.GameObjectType;
@@ -20,9 +20,9 @@ package de.p3337.zzznake.Game.Model.Snake
 		private var _direction:Direction;
 		private var playingField:PlayingField;
 		
-		[Embed(source='/de/p3337/zzznake/Library/head.png')]
+		[Embed(source='/de/p3337/zzznake/Library/head.svg')]
 		private var snakeHeadClass:Class;
-		private var snakeHeadBitmap:Bitmap;
+		private var snakeHeadSpriteAsset:SpriteAsset;
 		
 		/**
 		 * Creates a new SnakeHeadElement.
@@ -35,9 +35,9 @@ package de.p3337.zzznake.Game.Model.Snake
 		public function SnakeHeadElement(startPosition:Field, playingField:PlayingField) {
 			super(startPosition, playingField);
 			this.playingField = playingField;
-			_direction = Direction.LEFT;
+			_direction = Direction.RIGHT;
 			
-			snakeHeadBitmap = new snakeHeadClass();
+			snakeHeadSpriteAsset = new snakeHeadClass();
 		}
 		
 		override public function dispose():void {
@@ -92,8 +92,8 @@ package de.p3337.zzznake.Game.Model.Snake
 			super.setPosition(playingField.getFieldToTheLeftOfField(super.getPosition()));
 		}
 		
-		public function getImage():Bitmap {
-			return snakeHeadBitmap;
+		public function getSpriteAsset():SpriteAsset {
+			return snakeHeadSpriteAsset;
 		}
 	}
 }

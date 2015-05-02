@@ -25,9 +25,7 @@
   <buildTargets>
     <buildTarget buildTargetName="default" platformId="default">
       <airSettings airCertificatePath="D:/Development/Flash Builder/certificate.p12" airTimestamp="true" anePathSet="true" version="1">
-        <airExcludes>
-          <pathEntry path="de/p3337/zzznake/Library/Logo"/>
-        </airExcludes>
+        <airExcludes/>
         <anePaths/>
         <newLaunchParams/>
         <modifiedLaunchParams/>

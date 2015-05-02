@@ -5,7 +5,7 @@
  */
 package de.p3337.zzznake.Game.Model.Snack
 {
-	import flash.display.Bitmap;
+	import mx.core.SpriteAsset;
 	
 	import de.p3337.zzznake.Enum.GameObjectType;
 	import de.p3337.zzznake.Game.Model.Field.Field;
@@ -17,9 +17,9 @@ package de.p3337.zzznake.Game.Model.Snack
 	 */
 	public class PizzaElement extends SnackElement {
 		
-		[Embed(source='/de/p3337/zzznake/Library/pizza_slice.png')]
+		[Embed(source='/de/p3337/zzznake/Library/pizza_slice.svg')]
 		private var PizzaSliceClass:Class;
-		private var pizzaSliceBitmap:Bitmap;
+		private var pizzaSliceAsset:SpriteAsset;
 		
 		/**
 		 * Creates a new PizzaElement.
@@ -29,7 +29,7 @@ package de.p3337.zzznake.Game.Model.Snack
 		 */
 		public function PizzaElement(position:Field) {
 			super(position);
-			pizzaSliceBitmap = new PizzaSliceClass();
+			pizzaSliceAsset = new PizzaSliceClass();
 		}
 		
 		override public function dispose():void {
@@ -40,8 +40,8 @@ package de.p3337.zzznake.Game.Model.Snack
 			return GameObjectType.FOOD;
 		}
 		
-		override public function getImage():Bitmap {
-			return pizzaSliceBitmap;
+		override public function getSpriteAsset():SpriteAsset {
+			return pizzaSliceAsset;
 		}
 	}
 }
